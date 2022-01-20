@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Piano Keys</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="keys">
+            <div data-key="81" class="key">
+                <span>C</span>
+            </div>
+            <div data-key="87" class="key">
+                <span>D</span>
+            </div>
+            <div data-key="69" class="key">
+                <span>E</span>
+            </div>
+            <div data-key="82" class="key">
+                <span>F</span>
+            </div>
+            <div data-key="84" class="key">
+                <span>G</span>
+            </div>
+            <div data-key="89" class="key">
+                <span>A</span>
+            </div>
+            <div data-key="85" class="key">
+                <span>H</span>
+            </div>
+        </div>
+
+        <audio data-key="81" src="c.mp3"></audio>
+        <audio data-key="87" src="d.mp3"></audio>
+        <audio data-key="69" src="e.mp3"></audio>
+        <audio data-key="82" src="f.mp3"></audio>
+        <audio data-key="84" src="g.mp3"></audio>
+        <audio data-key="89" src="a.wav"></audio>
+        <audio data-key="85" src="h.mp3"></audio>
+
+        <script>
+            function playNoteAndAddEffect(event) {
+                const audioSelector = `audio[data-key="${event.keyCode}"]`;
+                const viewSelector = `.key[data-key="${event.keyCode}"]`;
+                const note = document
+                    .querySelector(audioSelector);
+                const view = document
+                    .querySelector(viewSelector);
+                
+                if(!note) return; // if note is null
+
+                view.classList.add("playing");
+
+                // sound
+                note.currentTime = 0;
+                note.play();
+            }
+
+            function removePlayingEffect(event) {
+                if (event.propertyName !== "transform") return;
+
+                this.classList.remove("playing");
+            }
+
+            const allKeys = document.querySelectorAll(".key");
+            allKeys.forEach(key => key.addEventListener("transitionend", removePlayingEffect));
+
+            window.addEventListener("keydown", playNoteAndAddEffect);
+        </script>
+    </body>
+</html>
