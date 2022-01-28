@@ -7,9 +7,9 @@
 
 :root {
     --background_color: #69585f;
-    --base_color: #fcf300;
-    --blur-value: 10px;
-    --spacing-value: 10px;
+    --basecolor: #fcf300;
+    --blur: 10px;
+    --spacing: 10px;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 }
 
 .container strong {
-    color: var(--base_color);
+    color: var(--basecolor);
 }
 
 .container h1 {
@@ -56,7 +56,7 @@ body {
     height: auto;
     width: 100vh;
 
-    filter: blur(var(--blur-value)); 
+    filter: blur(var(--blur)); 
 }
 
 

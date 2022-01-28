@@ -7,22 +7,24 @@
 
     function computeDefaultColor() {
         let style = getComputedStyle(document.body);
-        return style.getPropertyValue("--base_color");
+        return style.getPropertyValue("--basecolor");
     }
 
     function computeDefaultBlur() {
         let style = getComputedStyle(document.body);
-        return style.getPropertyValue("--blur-value");
+        return style.getPropertyValue("--blur");
     }
 
     function computeDefaultSpace() {
         let style = getComputedStyle(document.body);
-        return style.getPropertyValue("--spacing-value");
+        return style.getPropertyValue("--spacing");
     }
 
     function handleUpdate() {
-        console.log(this.value);
-        console.log(this.dataset);
+        // for slider this value will be 'px'
+        // but for color peaker this doesn't have desired option
+        const units = this.dataset.sizingUnit || "";
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + units);
     }
 
     function init_controls() {
