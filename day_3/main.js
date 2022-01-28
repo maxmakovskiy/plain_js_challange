@@ -23,10 +23,15 @@
     function handleUpdate() {
         // Normalize this.value for bluring to 1..10px
 
+        let normalizedValue = this.value;
+        if (this.name === "blur") {
+            normalizedValue = this.value / 10;
+        }
+
         // For slider this value will be 'px'
         // but for color peaker this doesn't have desired option
         const units = this.dataset.sizingUnit || "";
-        document.documentElement.style.setProperty(`--${this.name}`, this.value + units);
+        document.documentElement.style.setProperty(`--${this.name}`, normalizedValue + units);
     }
 
     function init_controls() {

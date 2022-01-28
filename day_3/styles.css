@@ -8,8 +8,8 @@
 :root {
     --background_color: #69585f;
     --basecolor: #fcf300;
-    --blur: 0px;
-    --spacing: 0px;
+    --blur: 1px;
+    --spacing: 1px;
 }
 
 body {
