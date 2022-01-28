@@ -22,6 +22,7 @@
 
     function handleUpdate() {
         console.log(this.value);
+        console.log(this.dataset);
     }
 
     function init_controls() {
@@ -32,10 +33,12 @@
         blurSlider = document.querySelector("#blur_slider");
         blurSlider.value = computeDefaultBlur();
         blurSlider.addEventListener("change", handleUpdate);
+        blurSlider.addEventListener("mousemove", handleUpdate)
 
         spacingSlider = document.querySelector("#spacing_slider");
         spacingSlider.value = computeDefaultSpace();
         spacingSlider.addEventListener("change", handleUpdate);
+        spacingSlider.addEventListener("mousemove", handleUpdate)
     }
 
 
