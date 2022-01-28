@@ -8,6 +8,8 @@
 :root {
     --background_color: #69585f;
     --base_color: #fcf300;
+    --blur-value: 10px;
+    --spacing-value: 10px;
 }
 
 body {
@@ -49,8 +51,12 @@ body {
     margin-right: 0.5em;
 }
 
+
 .image-container img {
     height: auto;
     width: 100vh;
+
+    filter: blur(var(--blur-value)); 
 }
+
 
