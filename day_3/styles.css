@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+:root {
+    --background_color: #69585f;
+    --base_color: #fcf300;
+}
+
+body {
+    font-family: 'Mochiy Pop P One', sans-serif;
+    background-color: var(--background_color);
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container strong {
+    color: var(--base_color);
+}
+
+.container h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    font-size: 3em;
+}
+
+.controls {
+    display: flex;;
+    flex-direction: row;
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 1em;
+}
+
+.controls span {
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.image-container img {
+    height: auto;
+    width: 100vh;
+}
+
