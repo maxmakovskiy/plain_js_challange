@@ -8,8 +8,8 @@
 :root {
     --background_color: #69585f;
     --basecolor: #fcf300;
-    --blur: 10px;
-    --spacing: 10px;
+    --blur: 0px;
+    --spacing: 0px;
 }
 
 body {
@@ -51,6 +51,11 @@ body {
     margin-right: 0.5em;
 }
 
+.image-container {
+    background-color: var(--basecolor);
+    padding-top: var(--spacing);
+    padding-left: var(--spacing);
+}
 
 .image-container img {
     height: auto;

@@ -21,7 +21,9 @@
     }
 
     function handleUpdate() {
-        // for slider this value will be 'px'
+        // Normalize this.value for bluring to 1..10px
+
+        // For slider this value will be 'px'
         // but for color peaker this doesn't have desired option
         const units = this.dataset.sizingUnit || "";
         document.documentElement.style.setProperty(`--${this.name}`, this.value + units);
